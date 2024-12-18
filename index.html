@@ -10,35 +10,39 @@
     
     <div class="container">
         <h1>Tic Tac Toe</h1>
+        
+        <p class="current-Player">current Player :<span id="currentPlayer">X</span></p>
         <div class="board" >
-            <div class="cell" id="c1">1</div>
-            <div class="cell" id="c2">2</div>
-            <div class="cell" id="c3">3</div> 
+            <div class="cell" id="c1" onclick="selectBox(1)">1</div>
+            <div class="cell" id="c2" onclick="selectBox(2)">2</div>
+            <div class="cell" id="c3" onclick="selectBox(3)">3</div> 
         </div>
         <div class="board" >
-            <div class="cell" id="c4">4</div>
-            <div class="cell" id="c5">5</div>
-            <div class="cell" id="c6">6</div> 
+            <div class="cell" id="c4" onclick="selectBox(4)">4</div>
+            <div class="cell" id="c5" onclick="selectBox(5)">5</div>
+            <div class="cell" id="c6" onclick="selectBox(6)">6</div> 
         </div>
         <div class="board" >
-            <div class="cell" id="c7">7</div>
-            <div class="cell" id="c8">8</div>
-            <div class="cell" id="c9">9</div> 
+            <div class="cell" id="c7" onclick="selectBox(7)">7</div>
+            <div class="cell" id="c8" onclick="selectBox(8)">8</div>
+            <div class="cell" id="c9" onclick="selectBox(9)">9</div> 
         </div>
     </div>
     <script>
         const container=[-1, -1, -1, -1, -1, -1, -1, -1, -1,];
+        let currentPlayer = "X";
+
         function renderBoard(){
             const allCell = document.querySelectorAll(".cell");
 
             allCell.forEach((cellElement, i)=>{
-            if(container[i] === 'x')
+            if(container[i] =='X')
             {
-                cellElement.innerText = 'x';
+                cellElement.innerHTML = '<img src="./../image/X sign.png"  height="60px" />';
             }
-            else if(container[i] === 'o')
+            else if(container[i] == 'O')
             {
-                cellElement.innerText = 'o';
+                cellElement.innerHTML = '<img src="./../image/O sign.png"  height="60px" />';
             }
             else{
                 cellElement.innerText = ' ';
@@ -47,6 +51,20 @@
         })
     }
     renderBoard();
+    function selectBox(cellNumber){
+        container[cellNumber] = currentPlayer;
+
+        renderBoard();
+
+        if(currentPlayer ==="X"){
+            currentPlayer = "O";
+        }
+        else{
+            currentPlayer ="X";
+        }
+        const currentPlayerElement = document .getElementById("currentPlayer");
+        currentPlayerElement.innerText = "current Player : O";
+    }
     </script>
 </body>
 </html>
