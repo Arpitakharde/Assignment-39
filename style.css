@@ -1,10 +1,22 @@
 .board{
     display:flex;
+    margin-left:34%;
+ 
 }
 
 .cell{
-    width: 100px;
-    height: 100px;
-    background-color: #fff;
-    border: 2px solid #333;
+    width: 130px;
+    height: 130px;
+    background-color: #e0ebeb;
+    border: 2px solid #94b8b8;
+    align-content: center;
+}
+
+.cell:hover{
+    background-color: #d0e1e1;
+}
+
+.container {
+    text-align: center;
+
 }
