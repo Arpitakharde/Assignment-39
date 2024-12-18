@@ -29,14 +29,24 @@
     <script>
         const container=[-1, -1, -1, -1, -1, -1, -1, -1, -1,];
         function renderBoard(){
-            const cell1 = document.getElementById("c1");
-            if(container[0] == 'o'){
-                cell1.innerText = 'o';
+            const allCell = document.querySelectorAll(".cell");
+
+            allCell.forEach((cellElement, i)=>{
+            if(container[i] === 'x')
+            {
+                cellElement.innerText = 'x';
+            }
+            else if(container[i] === 'o')
+            {
+                cellElement.innerText = 'o';
             }
             else{
-                cell1.innerText = 'X';
-            }
-        }
+                cellElement.innerText = ' ';
+            } 
+                
+        })
+    }
+    renderBoard();
     </script>
 </body>
 </html>
