@@ -34,36 +34,42 @@
 
         function renderBoard(){
             const allCell = document.querySelectorAll(".cell");
+            console.log(allCell);
 
             allCell.forEach((cellElement, i)=>{
-            if(container[i] =='X')
+            if(container[i] ==='X')
             {
                 cellElement.innerHTML = '<img src="./../image/X sign.png"  height="60px" />';
             }
-            else if(container[i] == 'O')
+            else if(container[i] ==='O')
             {
-                cellElement.innerHTML = '<img src="./../image/O sign.png"  height="60px" />';
+                cellElement.innerHTML = '<img src="./../image/Osign.png"  height="60px" />';
             }
             else{
-                cellElement.innerText = ' ';
+                cellElement.innerHTML = ' ';
             } 
                 
-        })
+        });
     }
     renderBoard();
-    function selectBox(cellNumber){
-        container[cellNumber] = currentPlayer;
 
+
+    function selectBox(cellNumber){
+        if(container[cellNumber] !==-1){
+            alert("invalid move");
+            return;
+        }
+        container[cellNumber] = currentPlayer;
         renderBoard();
 
-        if(currentPlayer ==="X"){
+        if(currentPlayer === "X"){
             currentPlayer = "O";
         }
         else{
             currentPlayer ="X";
         }
-        const currentPlayerElement = document .getElementById("currentPlayer");
-        currentPlayerElement.innerText = "current Player : O";
+        const currentPlayerElement = document.getElementById("currentPlayer");
+        currentPlayerElement.innerText = currentPlayer ;
     }
     </script>
 </body>
