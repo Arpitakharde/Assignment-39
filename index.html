@@ -8,10 +8,10 @@
 </head>
 <body>
     
-    <div class="container">
-        <h1>Tic Tac Toe</h1>
-        
+        <h1 id="heading">Tic Tac Toe</h1>
         <p class="current-Player">current Player :<span id="currentPlayer"> X </span></p>
+
+    <div class="container">
         <div class="board" >
             <div class="cell"  onclick="selectBox(1)">1</div>
             <div class="cell"  onclick="selectBox(2)">2</div>
@@ -32,7 +32,7 @@
     <button class="resetButton" onclick="location.reload()"> Reset Game </button>
 
     <script>
-        const container = [-1, -1, -1, -1, -1, -1, -1, -1, -1,];
+        const container = [-1, -1, -1, -1, -1, -1, -1, -1, -1];
         let currentPlayer = "X";
 
         function renderBoard(){

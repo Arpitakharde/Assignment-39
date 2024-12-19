@@ -1,3 +1,11 @@
+#heading{
+    text-align: center;
+}
+
+.current-Player{
+    text-align: center;
+}
+
 .board{
     display:flex;
     margin-left:34%;
