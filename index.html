@@ -73,6 +73,16 @@
         const currentPlayerElement = document.getElementById("currentPlayer");
         currentPlayerElement.innerText = currentPlayer ;
     }
+
+    function resetContainer(){
+        container.fill(-1);
+        renderBoard();
+        
+        currentPlayer = "X";
+        const currentPlayerElement = document.getElementById("currentPlayer");
+        currentPlayerElement.innerText = currentPlayer;
+    
+    }
     </script>
 </body>
 </html>
