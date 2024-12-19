@@ -16,6 +16,18 @@
     background-color: #d0e1e1;
 }
 
+.resetButton{
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #94b8b8;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
 .container {
     text-align: center;
 
