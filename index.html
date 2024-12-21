@@ -13,9 +13,9 @@
 
     <div class="container">
         <div class="board" >
-            <div class="cell"  onclick="selectBox(0)">1</div>
-            <div class="cell"  onclick="selectBox(1)">2</div>
-            <div class="cell"  onclick="selectBox(2)">3</div> 
+            <div class="cell" id="cell1" onclick="selectBox(0)">1</div>
+            <div class="cell" id="cell2" onclick="selectBox(1)">2</div>
+            <div class="cell" id="cell3" onclick="selectBox(2)">3</div> 
         </div>
         <div class="board" >
             <div class="cell"  onclick="selectBox(3)">4</div>
@@ -72,6 +72,8 @@
         }
         const currentPlayerElement = document.getElementById("currentPlayer");
         currentPlayerElement.innerText = currentPlayer ;
+
+        checkForWinner();
     }
 
     function resetContainer(){
@@ -82,6 +84,40 @@
         const currentPlayerElement = document.getElementById("currentPlayer");
         currentPlayerElement.innerText = currentPlayer;
     
+    }
+
+    function checkForWinner(){
+       
+        if(container[0]=="X" && container[1]=="X" && container[2]=="X"){
+            alert('player X Win');    
+        }
+        else if(container[3]=="X" && container[4]=="X" && container[5]=="X"){
+            alert('player X Win'); 
+        }
+        else if(container[6]=="X" && container[7]=="X" && container[8]=="X"){
+            alert('player X Win'); 
+        }
+        else if(container[0]=="X" && container[3]=="X" && container[6]=="X"){
+            alert('player X Win'); 
+        }
+        else if(container[1]=="X" && container[4]=="X" && container[7]=="X"){
+            alert('player X Win'); 
+        }
+        else if(container[2]=="X" && container[5]=="X" && container[8]=="X"){
+            alert('player X Win'); 
+        }
+        else if(container[6]=="X" && container[4]=="X" && container[2]=="X"){
+            alert('player X Win'); 
+        }
+        else if(container[0]=="X" && container[4]=="X" && container[8]=="X"){
+            alert('player X Win'); 
+        } 
+        else if(container[2]=="X" && container[4]=="X" && container[6]=="X"){
+            alert('player X Win'); 
+        }  
+        else{
+            alert('player O Win'); 
+        }      
     }
     </script>
 </body>
