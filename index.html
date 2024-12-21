@@ -86,38 +86,78 @@
     
     }
 
+    function playerPresent(places, player){
+       const a = places[0];
+       const b = places[1];
+       const c = places[2];
+       
+       if(container[a] ==player && container[b] ==player && container[c] ==player){
+        return true;
+       }
+       else{
+        return false;
+       }
+           
+    }
+
     function checkForWinner(){
        
-        if(container[0]=="X" && container[1]=="X" && container[2]=="X"){
+        if(playerPresent([0, 1, 2], "X")){
             alert('player X Win');    
         }
-        else if(container[3]=="X" && container[4]=="X" && container[5]=="X"){
+        else if(playerPresent([3, 4, 5], "X")){
             alert('player X Win'); 
         }
-        else if(container[6]=="X" && container[7]=="X" && container[8]=="X"){
+        else if(playerPresent([6, 7, 8], "X")){
             alert('player X Win'); 
         }
-        else if(container[0]=="X" && container[3]=="X" && container[6]=="X"){
+        else if(playerPresent([0, 3, 6], "X")){
             alert('player X Win'); 
         }
-        else if(container[1]=="X" && container[4]=="X" && container[7]=="X"){
+        else if(playerPresent([1, 4, 7], "X")){
             alert('player X Win'); 
         }
-        else if(container[2]=="X" && container[5]=="X" && container[8]=="X"){
+        else if(playerPresent([2, 5, 8], "X")){
             alert('player X Win'); 
         }
-        else if(container[6]=="X" && container[4]=="X" && container[2]=="X"){
+        else if(playerPresent([6, 4, 2], "X")){
             alert('player X Win'); 
         }
-        else if(container[0]=="X" && container[4]=="X" && container[8]=="X"){
+        else if(playerPresent([0, 4, 8], "X")){
             alert('player X Win'); 
         } 
-        else if(container[2]=="X" && container[4]=="X" && container[6]=="X"){
+        else if(playerPresent([2, 4, 6], "X")){
             alert('player X Win'); 
         }  
-        else{
+         
+        
+        if(playerPresent([0, 1, 2], "O")){
+            alert('player O Win');    
+        }
+        else if(playerPresent([3, 4, 5], "O")){
             alert('player O Win'); 
-        }      
+        }
+        else if(playerPresent([6, 7, 8], "O")){
+            alert('player O Win'); 
+        }
+        else if(playerPresent([0, 3, 6], "O")){
+            alert('player O Win'); 
+        }
+        else if(playerPresent([1, 4, 7], "O")){
+            alert('player O Win'); 
+        }
+        else if(playerPresent([2, 5, 8], "O")){
+            alert('player O Win'); 
+        }
+        else if(playerPresent([6, 4, 2], "O")){
+            alert('player O Win'); 
+        }
+        else if(playerPresent([0, 4, 8], "O")){
+            alert('player O Win'); 
+        } 
+        else if(playerPresent([2, 4, 6], "O")){
+            alert('player O Win'); 
+        } 
     }
     </script>
 </body>
